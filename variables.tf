@@ -13,3 +13,7 @@ variable "instance_name" {
   default     = "Provisioned by Terraform"
 }
 
+variable "aws_key" {
+  description = "EC2 SSH Key"
+  default     = "keith-eu-west2"
+}
