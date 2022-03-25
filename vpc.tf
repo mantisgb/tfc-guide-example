@@ -29,7 +29,7 @@ resource "aws_default_security_group" "default" {
 resource "aws_subnet" "trust" {
   count             = var.aws.no_availability_zones
   cidr_block        = cidrsubnet(var.aws.vpc_cidr, 8, (count.index + 20))
-  vpc_id            = aws_vpc.inbound.id
+  vpc_id            = aws_vpc.expedition.id
   availability_zone = data.aws_availability_zones.available.names[count.index]
   tags = {
     "Name" = "${data.aws_availability_zones.available.names[count.index]}-trust"
